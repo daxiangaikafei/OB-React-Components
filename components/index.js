@@ -1,6 +1,8 @@
 'use strict';
 
 
+import "./base/base.js";
+
 /*form*/
 export const Input = require("./form/input.js");
 

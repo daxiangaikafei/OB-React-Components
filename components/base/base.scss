@@ -1,0 +1,222 @@
+// $browser-default-font-size: 16px !default;
+// @function pxTorem($px){
+//     //$px为需要转换的字号
+//     @return $px / $browser-default-font-size * 1rem;
+// }
+
+
+/* iPhone 2G-4S in portrait */
+@media only screen and (min-device-width:320px) and (max-device-width:480px) and (orientation:portrait) {
+
+	/* STYLES GO HERE */
+	html{
+		font-size: 81.5%;
+	}
+}
+
+/* iPhone 2G-4S in landscape */
+@media only screen and (min-device-width:320px) and (max-device-width:480px) and (orientation:landscape) {
+	/* STYLES GO HERE */
+	html{
+		font-size: 81.5%;
+	}
+}
+
+
+/* iPhone 2G-4S in portrait & landscape */
+@media only screen and (min-device-width:320px) and (max-device-width:480px) {
+	/* STYLES GO HERE */
+	html{
+		font-size: 81.5%;
+	}
+}
+
+
+@mixin iphone4() {
+	@media only screen and (min-device-width:320px) and (max-device-width:480px){
+		/* STYLES GO HERE */
+		@content;
+	}
+}
+
+
+
+
+
+
+/* iPhone 5 & 5S in portrait */
+@media only screen and (min-device-width:320px) and (max-device-width:568px) and (orientation:portrait) {
+
+	/* STYLES GO HERE */
+	html{
+		font-size: 87.5%;
+	}
+}
+
+/* iPhone 5 & 5S in landscape */
+@media only screen and (min-device-width:320px) and (max-device-width:568px) and (orientation:landscape) {
+
+	/* STYLES GO HERE */
+	html{
+		font-size: 87.5%;
+	}
+}
+
+/* iPhone 5 & 5S Media Queries
+iPhone 5 & 5S in portrait & landscape */
+@media only screen and (min-device-width:320px) and (max-device-width:568px) {
+
+	/* STYLES GO HERE */
+	html{
+		font-size: 87.5%;
+	}
+}
+
+
+
+
+
+/* iPhone 6 in portrait & landscape */
+@media only screen and (min-device-width:375px) and (max-device-width:667px) {
+	html{
+		font-size: 100%;
+	}
+	/* STYLES GO HERE */
+	
+}
+
+/* iPhone 6 in landscape */
+@media only screen and (min-device-width:375px) and (max-device-width:667px) and (orientation:landscape) {
+	html{
+		font-size: 100%;
+	}
+	/* STYLES GO HERE */
+}
+
+/* iPhone 6 in portrait  */
+@media only screen and (min-device-width:375px) and (max-device-width:667px) and (orientation:portrait) {
+	html{
+		font-size: 100%;
+	}
+	/* STYLES GO HERE */
+}
+
+/* iPhone 6 Plus Media Queries */
+/* iPhone 6 Plus in portrait & landscape */
+@media only screen and (min-device-width:414px) and (max-device-width:736px) {
+	/* STYLES GO HERE */
+	html{
+		font-size: 112.5%;
+	}
+}
+
+/* iPhone 6 Plus in landscape */
+@media only screen and (min-device-width:414px) and (max-device-width:736px) and (orientation:landscape) {
+
+	/* STYLES GO HERE */
+	html{
+		font-size: 112.5%;
+	}
+}
+
+/* iPhone 6 Plus in portrait */
+@media only screen and (min-device-width:414px) and (max-device-width:736px) and (orientation:portrait) {
+
+	/* STYLES GO HERE */
+	html{
+		font-size: 112.5%;
+	}
+}
+
+@mixin iphone6() {
+	@media only screen and (min-device-width:414px) and (max-device-width:763px){
+		/* STYLES GO HERE */
+		
+		@content;
+	}
+}
+$font-size: 16;
+@function switchRem($unit) {
+    @return $unit/$font-size+rem;
+}
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+    &:focus {
+        outline: none;
+    }
+    /* background-color: $bg-gray-color; */
+}
+div,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+}
+//针对移动端
+input[type=text],
+input[type=number],
+input[type=tel],
+input[type=button],
+input[type=submit],
+input[type=file],
+button,
+textarea,
+a,
+select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none!important;
+    text-decoration: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /* color: $font-normal-color; */
+    &:focus,
+    &:active,
+    &:visited,
+    &:hover {
+        outline: none!important;
+    }
+}
+ul{
+	 list-style: none;
+}
+.hide,
+.hidden {
+    display: none!important;
+    visibility: hidden;
+}
+.clear {
+    clear: both;
+}
+
+/* iPhone 2G, 3G, 4, 4S Media Queries
+It's noteworthy that these media queries are also the same for iPod Touch generations 1-4. */
+
+
+
+/* iPhone 5 Resolution
+Screen Width = 320px (CSS Pixels)
+Screen Height = 568px (CSS Pixels)
+
+Screen Width = 640px (Actual Pixels)
+Screen Height = 1136px (Actual Pixels)
+
+Device-pixel-ratio:2
+iPhone 4/4S Resolution
+Screen Width = 320px (CSS Pixels)
+Screen Height = 480px (CSS Pixels)
+
+Screen Width = 640px (Actual Pixels)
+Screen Height = 960px (Actual Pixels)
+
+Device-pixel-ratio:2
+iPhone 2G/3G/3GS Resolution
+Screen Width = 320px (CSS Pixels)
+Screen Height = 480px (CSS Pixels)
+
+Screen Width = 320px (Actual Pixels)
+Screen Height = 480px (Actual Pixels)
+
+Device-pixel-ratio:1 */

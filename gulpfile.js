@@ -13,7 +13,7 @@ const webpackConfig = require("./webpack.config.js");
 
 
 const build = function(env,callback){
-	let config = webpackConfig(env);
+	var config = webpackConfig(env);
     webpack(Object.create(config), function(err, stats) {
         if(err) throw new gutil.PluginError("webpack", err);
         gutil.log("[webpack]", stats.toString({
