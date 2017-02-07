@@ -1,0 +1,91 @@
+
+.virtual-modal-wrap{
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+
+
+    outline: 0;
+
+    display: flex;
+
+    
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.virtual-modal{
+    width: 80%;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+    border: 0;
+    background-clip: padding-box;
+    text-align: center;
+    height: auto;
+    overflow: hidden;
+
+    padding-top: .3rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.virtual-modal-close{
+    border: 0;
+    background: transparent;
+    font-size: .48rem;
+    position: absolute;
+    left: .3rem;
+    top: .18rem;
+    line-height: 1;
+    color: #bcbcbc;
+    text-decoration: none;
+    outline: none;
+    z-index: 999;
+}
+
+
+.virtual-modal-header{
+    //display: flex;
+    p{
+            margin: 0;
+            font-size: .34rem;
+            line-height: 1;
+            color: #000;
+            text-align: center;
+    }
+}
+
+.virtual-modal-button-group-v{
+
+}
+
+.virtual-modal-button{
+    border: 0;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #108ee9;
+    font-size: .32rem;
+    height: 1rem;
+    line-height: 1rem;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+html,body{
+    font-size: 16px;
+}

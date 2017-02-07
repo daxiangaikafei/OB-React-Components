@@ -1,0 +1,60 @@
+{
+  "name": "qb-rc-components",
+  "version": "0.0.1",
+  "description": "qb",
+  "main": "qb-ui.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "webpack --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daxiangaikafei/OB-React-Components.git"
+  },
+  "keywords": [
+    "QB",
+    "react",
+    "components"
+  ],
+  "author": "tenglong-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daxiangaikafei/OB-React-Components/issues"
+  },
+  "homepage": "https://github.com/daxiangaikafei/OB-React-Components#readme",
+  "dependencies": {
+    "autoprefixer": "^6.7.2",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "css-loader": "^0.25.0",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.4.4",
+    "imports-loader": "^0.6.5",
+    "lodash": "^4.17.4",
+    "postcss-loader": "^1.2.2",
+    "rc-calendar": "^7.5.1",
+    "rc-select": "^6.6.10",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "clean-webpack-plugin": "^0.1.15",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "gulp-clean": "^0.3.2",
+    "gutil": "^1.6.4",
+    "html-webpack-plugin": "^2.22.0",
+    "lodash-webpack-plugin": "^0.11.0",
+    "node-sass": "^4.5.0",
+    "open-browser-webpack-plugin": "0.0.3",
+    "postcss-modules": "^0.6.4",
+    "run-sequence": "^1.2.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
