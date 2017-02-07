@@ -17,16 +17,16 @@ const Static = {
   }
 }
 
-let init = function (env) {
+var init = function (env) {
   
 
       //env = "production";
 
-      let entry = {};
-      let filename = Static.entry[env];
+      var entry = {};
+      var filename = Static.entry[env];
       entry[filename] = "./components/index.js";
 
-      let sourceMap = "";
+      var sourceMap = "";
 
       if(env ==="dev"){
         sourceMap="?sourceMap";
@@ -98,7 +98,7 @@ let init = function (env) {
         ],
       };
       if(env === "production"){
-        delete Config.devtool;
+        devare Config.devtool;
         Config.plugins.push(new webpack.optimize.UglifyJsPlugin({
             compressor: {
               warnings: false
