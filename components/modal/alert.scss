@@ -59,7 +59,7 @@ $browser-default-font-size:16px!default;
 
 
 .virtual-modal{
-    width: 80%;
+    width: 74%;
     background-color: white;
     border-radius: 4px;
     position: relative;
@@ -69,7 +69,7 @@ $browser-default-font-size:16px!default;
     height: auto;
     overflow: hidden;
 
-    @include remCalc(padding-top,12);
+    @include remCalc(padding-top,18);
 
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@ $browser-default-font-size:16px!default;
 }
 .virtual-modal-body{
     //padding: 0 .3rem .3rem;
-    @include remCalc(padding,0,14px,14px);
+    @include remCalc(padding,0,16px,16px);
     p{
         margin: 0;
         @include remCalc(font-size,14);
@@ -126,6 +126,20 @@ $browser-default-font-size:16px!default;
 
 .virtual-modal-button-group-v{
 
+}
+
+.virtual-modal-button-group-h{
+    display: flex;
+    //flex-direction: row;
+    margin: 0;
+    padding: 0;
+    .virtual-modal-button{
+        flex: 1;
+        &:first-child{
+                color: #000;
+                border-right: 1px solid #ddd;
+        }
+    }
 }
 
 .virtual-modal-button{

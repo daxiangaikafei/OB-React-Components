@@ -9,11 +9,8 @@ export const Input = require("./form/input.js");
 
 
 
-/*  pop up  */
-export const Alert = require("./popup/alert.js");
-export const Confirm = require("./popup/confirm.js");
-export const WinMark = require("./popup/winMark.js");
-export const PopUp = require("./popup/index.js");
-
+/*  modal  */
+export const WinMark = require("./modal/winMark.js");
+export const Modal = require("./modal/index.js");
 
 

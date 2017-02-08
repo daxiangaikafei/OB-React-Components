@@ -1,11 +1,11 @@
 'use strict'
 
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+
+
 import "./base.scss";
 
-const init = function(){
 
-}
 
-init();
-
-module.exports = init;
+module.exports = {};
