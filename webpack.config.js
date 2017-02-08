@@ -98,7 +98,7 @@ var init = function (env) {
         ],
       };
       if(env === "production"){
-        devare Config.devtool;
+        delete Config.devtool;
         Config.plugins.push(new webpack.optimize.UglifyJsPlugin({
             compressor: {
               warnings: false

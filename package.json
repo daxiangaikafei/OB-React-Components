@@ -5,7 +5,7 @@
   "main": "qb-ui.js",
   "scripts": {
     "build": "gulp build",
-    "start": "webpack --config"
+    "start": "gulp start"
   },
   "repository": {
     "type": "git",
