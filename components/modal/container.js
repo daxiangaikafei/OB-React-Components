@@ -31,7 +31,11 @@ class HelpModal extends React.Component {
         return this.show(title,message,true);
     }
 
-    
+    prompt(title,message,actions){
+
+    }
+
+
     close(){
         this.setState({
             showModal:false,

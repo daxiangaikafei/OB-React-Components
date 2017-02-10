@@ -11,6 +11,8 @@ export const BarTab = require("./bar/tab.js");
 
 export const Picker = require("./picker/index.js");
 
+
+
 export const Calendar = require("./calendar/index.js");
 
 
@@ -18,4 +20,4 @@ export const Calendar = require("./calendar/index.js");
 export const WinMark = require("./modal/winMark.js");
 export const Modal = require("./modal/index.js");
 
-
+export const PopUp = require("./popup/index.js");
