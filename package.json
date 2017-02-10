@@ -30,11 +30,14 @@
     "html-loader": "^0.4.4",
     "imports-loader": "^0.6.5",
     "lodash": "^4.17.4",
+    "moment": "^2.17.1",
     "postcss-loader": "^1.2.2",
     "rc-calendar": "^7.5.1",
     "rc-select": "^6.6.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "rmc-date-picker": "^5.1.0",
+    "rmc-picker": "^3.8.4",
     "webpack": "^2.2.1"
   },
   "devDependencies": {

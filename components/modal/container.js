@@ -30,6 +30,8 @@ class HelpModal extends React.Component {
         console.log("-----------")
         return this.show(title,message,true);
     }
+
+    
     close(){
         this.setState({
             showModal:false,

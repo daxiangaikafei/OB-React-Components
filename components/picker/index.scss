@@ -1,0 +1,103 @@
+
+$browser-default-font-size:16px!default;
+
+@function strip-units($number){ 
+    @return $number / ($number * 0 + 1); 
+} 
+@mixin remCalc($property, $values...) {
+		$max: length($values); //返回$values列表的长度值 
+		$pxValues: ''; 
+		$remValues: ''; 
+			@for $i from 1 through $max { 
+				$value: strip-units(nth($values, $i));//返回$values列表中的第$i个值，并将单位值去掉 
+				$browser-default-font-size: strip-units($browser-default-font-size); 
+				//$pxValues: #{$pxValues + $value * $browser-default-font-size}px;
+                $pxValues: #{$pxValues + $value / $browser-default-font-size }rem;
+                //$px / $browser-default-font-size * 1rem;
+                //$pxValues:#{$value};
+				@if $i < $max { 
+					$pxValues: #{$pxValues + " "}; 
+				} 
+			} 
+			@for $i from 1 through $max { 
+				$value: strip-units(nth($values, $i)); 
+				$remValues: #{$remValues + $value}px;
+
+				@if $i < $max { 
+					$remValues: #{$remValues + " "}; 
+				} 
+			} 
+		#{$property}: $pxValues; 
+		//#{$property}: $remValues; 
+}
+
+
+
+.virtual-picker{
+    box-sizing: border-box;
+    //border: 1px solid red;
+    width: 100%;
+   // height: 300px;
+   // background-color: red;
+
+    
+}
+.rmc-picker{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 238px;
+    //overflow: hidden;
+}
+.rmc-picker-content{
+   // @include remCalc(padding, 120px,0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 102px 0;
+}
+
+.rmc-picker-mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+    background-position: top, bottom;
+    background-size: 100% 102px;
+    background-repeat: no-repeat;
+}
+.rmc-picker-indicator{
+    right: 0;
+    position: absolute;
+    left: 0;
+    top: 102px;
+    height: 34px;
+    z-index: 3;
+    background-image: linear-gradient(180deg,#d0d0d0,#d0d0d0,transparent,transparent),linear-gradient(0deg,#d0d0d0,#d0d0d0,transparent,transparent);
+    background-position: top, bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+}
+
+.rmc-picker-item{
+    touch-action: manipulation;
+    text-align: center;
+    @include remCalc(font-size, 14px);
+    @include remCalc(height, 34px);
+    @include remCalc(line-height, 34px);
+    // font-size: .3rem;
+    // height: .68rem;
+    // line-height: .68rem;
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    //transition:font-size 0.23s;
+}
+.rmc-picker-item-selected{
+    @include remCalc(font-size, 16px);
+}

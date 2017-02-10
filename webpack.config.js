@@ -40,6 +40,7 @@ var init = function (env) {
           library: '[name]',
           filename: '[name].js'
         },
+       // "display-max-modules":100,
         //devtool:"eval-source-map",//无能模式
           //devtool:"cheap-module-eval-source-map",无能模式
           //devtool: "cheap-source-map",   能调试  sass soucemap error
@@ -47,12 +48,10 @@ var init = function (env) {
           devtool:"source-map", //  都行  最慢
           //devtool: "#eval",     能调试  sass soucemap error
           //devtool: "#eval", 
-        externals: {'react': 'react', 'react-dom': 'react-dom',"lodash":"lodash"},
-      /*  resolve: {
-          alias: {
-            "lodash":PATHS.libsPath+"/common/lodash.js"
-          }
-        },*/
+        externals: {'react': 'react', 'react-dom': 'react-dom'},//,"lodash":"lodash","moment":"moment"
+        resolve: {
+          extensions: ['.web.tsx', '.web.ts', '.web.jsx', '.web.js', '.ts', '.tsx', '.js', '.jsx', '.json']
+        },
         module: {
             rules: [{
                 test: /\.js?$/,

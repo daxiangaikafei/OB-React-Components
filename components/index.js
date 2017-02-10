@@ -7,6 +7,11 @@ import "./base/base.js";
 export const Input = require("./form/input.js");
 
 
+export const BarTab = require("./bar/tab.js");
+
+export const Picker = require("./picker/index.js");
+
+export const Calendar = require("./calendar/index.js");
 
 
 /*  modal  */

@@ -1,0 +1,52 @@
+$baseColor:rgb(74, 159, 242);   //整体风格 的蓝色
+
+
+.container-calendar-show{
+	width: 200px;
+	height: 24px;
+}
+.container-calendar{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	//top: 0;
+	display: flex;
+	z-index: 20;
+	background-color: #fff;
+	flex-direction: column;
+	border-top: 1px solid gray;
+    padding-top: 10px;
+
+	.rmc-date-picker{
+		width: 100%;
+	}
+
+	.calendar-top{
+		display: flex;
+		width: 100%;
+		color:$baseColor;
+		justify-content: space-between;
+		button{
+			border:0px;
+			margin: 5px 20px;
+			background-color: #fff;
+			color:$baseColor;
+		}
+
+	}
+
+
+}
+
+.container-calendar-show {
+	//display: flex;
+	min-width: 150px;
+	min-height: 20px;
+	.calendar-span{
+			display: flex;
+			width: 100%;
+			height: 100%;
+			border:1px solid red ;
+	}
+}

@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import styles from  "./alert.scss";
 
-console.log(styles);
+//console.log(styles);
 
 class Alert extends React.Component {
     constructor(props) {
@@ -39,8 +39,6 @@ class Alert extends React.Component {
                     <div className="virtual-modal-footer">
                         {this.renderBtns()}
                     </div>
-                    
-                    
                 </div> 
             </div>
            
