@@ -19,7 +19,7 @@ const options = {
 
 
 
-let sourceMap = "?sourceMap";
+var sourceMap = "?sourceMap";
 
 var Config = {
   entry:{
