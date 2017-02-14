@@ -6,6 +6,8 @@ import PopUp from "./popup";
 
 import _ from "lodash";
 
+import { VelocityComponent,VelocityTransitionGroup }  from "velocity-react";
+
 class HelpModal extends React.Component {
     constructor(props){
         super(props);
@@ -21,6 +23,13 @@ class HelpModal extends React.Component {
             showModal:false,
             popUp:{},
         })
+
+        let self = this;
+        return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                    resolve();
+            })
+        })
     }
     show(content,options){
         let self = this;
@@ -33,8 +42,10 @@ class HelpModal extends React.Component {
                 children:content,
                 onMaskClose:function(){
                     if(options&&options.maskClosable===true){
-                        self.hide();
-                        resolve("Ok");
+                        self.hide().then(function(){
+                            resolve("Ok");
+                        });
+                        
                     };
                 }
             })
@@ -46,16 +57,30 @@ class HelpModal extends React.Component {
     }
     render(){
         let {showModal,popUp} = this.state;
+
+        let {anEnter,anLeave} = this.props;
         return (
             <div className="help">
                 <WinMark show={showModal} onClick = {popUp.onMaskClose}/>
-                <PopUp {...popUp}/>
+                <VelocityTransitionGroup enter={anEnter} leave={anLeave}>
+                {showModal&&(<PopUp {...popUp}/>)}
+                </VelocityTransitionGroup>
             </div>
         )
     }
 
 }
 
+HelpModal.defaultProps = {
+    anEnter:{
+        duration:200,
+        animation: "slideDown"
+    },
+    anLeave:{
+        duration:200,
+        animation: "slideUp"
+    }
+}
 
 //
 

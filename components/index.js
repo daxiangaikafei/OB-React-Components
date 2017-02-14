@@ -3,6 +3,9 @@
 
 import "./base/base.js";
 
+// require('velocity-animate');
+//   require('velocity-animate/velocity.ui');
+
 /*form*/
 export const Input = require("./form/input.js");
 
@@ -13,7 +16,10 @@ export const Picker = require("./picker/index.js");
 
 
 
+
+
 export const Calendar = require("./calendar/index.js");
+
 
 
 /*  modal  */

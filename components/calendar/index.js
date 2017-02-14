@@ -6,7 +6,7 @@ import 'rmc-picker/assets/index.css';
 import 'rmc-date-picker/assets/index.css';
 //import a from "rmc-date-picker";
 import DatePicker from 'rmc-date-picker/lib/index.web';
-//import moment from 'moment';
+import moment from 'moment';
 import zhCn from 'rmc-date-picker/lib/locale/zh_CN';
 //import enUs from 'rmc-date-picker/lib/locale/en_US';
 import 'moment/locale/zh-cn';
@@ -15,22 +15,24 @@ import 'moment/locale/zh-cn';
 import {isString} from "lodash";
 
 
+import { VelocityComponent,VelocityTransitionGroup }  from "velocity-react";
+
 
 
 //
 
-var TimeFromString = function(timeString){
-    if(timeString===undefined){
-        return new Date();
-    }else if(isString(timeString)){
-        let dataArray = ymd.split(timeString);
-        let date = new Date();
-        date.setFullYear(dataArray[0])
-        date.setMonth(dataArray[1]);
-        date.setDate(dataArray[2]);
-        return date;
-    }
-}
+// var TimeFromString = function(timeString){
+//     if(timeString===undefined){
+//         return new Date();
+//     }else if(isString(timeString)){
+//         let dataArray = ymd.split(timeString);
+//         let date = new Date();
+//         date.setFullYear(dataArray[0])
+//         date.setMonth(dataArray[1]);
+//         date.setDate(dataArray[2]);
+//         return date;
+//     }
+// }
 // Date.prototype.format = function(){
 //     let data = this;
 //     return Number(data.FullYear()+"-"+data.getMonth()+1)+"-"+data.getDate();
@@ -38,7 +40,7 @@ var TimeFromString = function(timeString){
 
 require("./index.scss");
 
-const now = TimeFromString();
+const now = moment();
 // const temp = moment("2016-01-31");
 // var d = temp.add(1,"months");//
 //console.log("temp day :",d.format("YYYY-MM-DD"))
@@ -68,21 +70,28 @@ class Calendar extends React.Component {
     componentDidMount(){
         let defaultValue = this.props.defaultValue;
         let self = this;
-         require.ensure([],function(){
-            console.log("kkkkkkkk")
-            var moment = require('moment');
-            if(defaultValue!==undefined){
-                //this.setState({ value:defaultValue });
-                //this.props.onChange&&this.props.onChange(this.props.name,defaultValue);
-                //console.log("....",moment(defaultValue===""?undefined:defaultValue));
-                let value = moment(defaultValue===""?undefined:defaultValue);
-                console.log(value);
-                self.setState({
-                    value:value
-                })
-            }
+        if(defaultValue!==undefined){
+            let value = moment(defaultValue===""?undefined:defaultValue);
+            console.log(value);
+            self.setState({
+                value:value
+            })
+        }
+        //  require.ensure([],function(){
+        //     console.log("kkkkkkkk")
+        //     var moment = require('moment');
+        //     if(defaultValue!==undefined){
+        //         //this.setState({ value:defaultValue });
+        //         //this.props.onChange&&this.props.onChange(this.props.name,defaultValue);
+        //         //console.log("....",moment(defaultValue===""?undefined:defaultValue));
+        //         let value = moment(defaultValue===""?undefined:defaultValue);
+        //         console.log(value);
+        //         self.setState({
+        //             value:value
+        //         })
+        //     }
             
-        })
+        // })
     }
     componentWillReceiveProps (nextProps) {
         let defaultValue = this.props.defaultValue;
@@ -117,11 +126,12 @@ class Calendar extends React.Component {
     render() {
 
         let {show,value,showValue} = this.state;
-        let {minDate,maxDate,mode} = this.props;
+        let {minDate,maxDate,mode,anEnter,anLeave} = this.props;
 
         return (
             <div className="container-calendar-show">
                 <span className="calendar-span" onClick={this.showOrHide}>{showValue}</span>
+                <VelocityTransitionGroup enter={anEnter} leave={anLeave}>
                 {
                     show&&(
                         <div className="container-calendar ">
@@ -138,6 +148,7 @@ class Calendar extends React.Component {
                         </div>
                     )
                 }
+                </VelocityTransitionGroup>
             </div>
         )
     }
@@ -149,7 +160,15 @@ Calendar.defaultProps = {
     minDate:"2014-05-05",
     maxDate:"",
     mode:"date",
-    name:"你没有设置属性呀"
+    name:"你没有设置属性呀",
+    anEnter:{
+        duration:300,
+        animation:"slideDown"
+    },
+    anLeave:{
+        duration:300,
+        animation:"slideUp"
+    }
 }
 
 module.exports = Calendar;

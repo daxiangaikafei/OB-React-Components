@@ -37,24 +37,40 @@ class HelpModal extends React.Component {
 
 
     close(){
-        this.setState({
-            showModal:false,
-            modal:{}
-        })
+       
+        let self = this;
+        return new Promise(function(resolve, reject){
+            self.setState({
+                showModal:false,
+                //modal:{}
+            })
+            setTimeout(function(){
+                self.setState({
+                    showModal:false,
+                    modal:{}
+                })
+                resolve();
+            },300)
+        }) 
     }
     show(title,message,isConfirm){
         
         let self = this;
         return new Promise(function(resolve, reject){
             let modal = Object.assign({},{
-                show:true,
+               // show:true,
                 title,
                 message,
                 isConfirm,
                 closable:!isConfirm,
                 callBack:function(data){
-                    self.close();
-                    resolve(data);
+                    self.close().then(function(){
+                        resolve(data);
+                    });
+                    //setTimeout({
+                        
+                    //})
+                    
                 }
             })
             self.setState({
@@ -65,6 +81,7 @@ class HelpModal extends React.Component {
     }
     render(){
         let {showModal,modal} = this.state;
+        modal.show = showModal;
         return (
             <div className="help">
                 <WinMark show={showModal}/>
